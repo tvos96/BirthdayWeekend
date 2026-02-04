@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Weekend London</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    :root {
+      --bg: #faf7f5;
+      --card: #ffffff;
+      --accent: #4855B1;
+      --text: #4855B1;
+      --muted: rgba(72,85,177,0.7);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Aptos Serif', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      /* was: padding-top: 220px;  -> niet meer nodig omdat banner niet fixed is */
+    }
+
+    /* ===== Banner ===== */
+    .banner {
+      /* was: position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000; */
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: none;
+    }
+
+    .banner img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section { margin-bottom: 4rem; }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 { margin-top: 0; }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.8rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+    }
+
+    /* ===== Agenda ===== */
+    details {
+      margin-bottom: 1.2rem;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 1rem 1.2rem;
+      border-radius: 14px;
+      background: rgba(72,85,177,0.08);
+    }
+
+    details[open] summary {
+      margin-bottom: 1rem;
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      padding: 0.4rem 0;
+    }
+
+    .time {
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    /* ===== Grids ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.4rem;
+    }
+
+    /* ===== Table ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+    }
+
+    th, td {
+      padding: 0.9rem;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(72,85,177,0.12);
+      text-align: left;
+    }
+
+    tr:not(:last-child) td {
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* ===== Filters ===== */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .filters select {
+      padding: 0.5rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(72,85,177,0.4);
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <img src="banner.png" alt="Birthday banner">
+  </div>
+
+  <header>
+    <h1>London Birthday Weekend</h1>
+    <p>You only turn 30 once — four days in London filled with love, discovery and unforgettable moments.</p>
+  </header>
+
+  <main>
+
+    <!-- AGENDA -->
+    <section>
+      <h2>Agenda</h2>
+
+      <details>
+        <summary>Day 1 — Friday, 07 February</summary>
+        <div class="card">
+          <div class="agenda-item"><div class="time">07:30</div><div>Arrival at Schiphol</div></div>
+          <div class="agenda-item"><div class="time">09:10</div><div>Flight EZY2516 → London Luton</div></div>
+          <div class="agenda-item"><div class="time">11:00</div><div>Transfer to The Nayland Hotel (Hyde Park)</div></div>
+          <div class="agenda-item"><div class="time">13:00</div><div>Afternoon Tea — Theatre Royal</div></div>
+          <div class="agenda-item"><div class="time">15:00</div><div>West End Show ✨</div></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Day 2 — Saturday, 08 February</summary>
+        <div class="card">
+          <div class="agenda-item"><div class="time">08:00</div><div>Leisure time</div></div>
+          <div class="agenda-item"><div class="time">14:00</div><div>Lunch — Blacklock Canary Wharf</div></div>
+          <div class="agenda-item"><div class="time">16:00</div><div>Surprise activity 💫</div></div>
+          <div class="agenda-item"><div class="time">18:00</div><div>Evening at leisure</div></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Day 3 — Sunday, 09 February</summary>
+        <div class="card">
+          <p>A relaxed day to wander, shop, explore neighbourhoods and discover hidden favourites.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Day 4 — Monday, 10 February</summary>
+        <div class="card">
+          <div class="agenda-item"><div class="time">08:00</div><div>Birthday Breakfast 🎂</div></div>
+          <div class="agenda-item"><div class="time">12:00</div><div>Leisure time</div></div>
+          <div class="agenda-item"><div class="time">17:00</div><div>Transfer to Luton Airport</div></div>
+          <div class="agenda-item"><div class="time">20:00</div><div>Flight → Amsterdam Schiphol</div></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLACES -->
+    <section>
+      <h2>Places to Visit</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Tower Hill &amp; Tower Bridge</h3>
+          <p>The historic heart of London along the Thames. Visit the Tower of London and its Crown Jewels, walk across the iconic Tower Bridge and explore atmospheric streets like Shad Thames. A perfect mix of history and riverside views.</p>
+        </div>
+
+        <div class="card">
+          <h3>Knightsbridge &amp; Belgravia</h3>
+          <p>One of London’s most elegant areas. Home to Harrods, Sloane Street and beautiful white townhouses. Quiet squares and refined streets make it ideal for a relaxed stroll.</p>
+        </div>
+
+        <div class="card">
+          <h3>Westminster</h3>
+          <p>The political and historical core of the city. Big Ben, Westminster Abbey and the Houses of Parliament dominate the skyline, with stunning views across the Thames.</p>
+        </div>
+
+        <div class="card">
+          <h3>Covent Garden</h3>
+          <p>A lively district full of theatres, boutiques and cafés. Street performers, the historic market hall and colourful spots like Neal’s Yard create a vibrant atmosphere.</p>
+        </div>
+
+        <div class="card">
+          <h3>Camden</h3>
+          <p>Known for its alternative culture, markets and canal-side walks. Camden is creative, edgy and full of street food, music and unique shops.</p>
+        </div>
+
+        <div class="card">
+          <h3>Soho</h3>
+          <p>Energetic and compact, packed with restaurants, pubs and nightlife. From Chinatown to Carnaby Street, Soho is perfect for dining, drinks and people-watching.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THINGS TO DO -->
+    <section>
+      <h2>Things to Do</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Madame Tussauds</h3>
+          <p>
+            <a href="https://www.madametussauds.com/london/" target="_blank">Official site</a> ·
+<a href="https://www.tripadvisor.com/AttractionProductReview-g186338-d11987842-Madame_Tussauds_London_Admission_Ticket-London_England.html" target="_blank">Tripadvisor</a> ·
+            <a href="https://maps.google.com/?q=Madame+Tussauds+London" target="_blank">Google Maps</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SEA LIFE London Aquarium</h3>
+          <p>
+            <a href="https://www.visitsealife.com/london/" target="_blank">Official site</a> ·
+<a href="https://www.tripadvisor.com/AttractionProductReview-g186338-d12078322-SEA_LIFE_London_Aquarium_Admission_Ticket-London_England.html" target="_blank">Tripadvisor</a> ·
+            <a href="https://maps.google.com/?q=SEA+LIFE+London+Aquarium" target="_blank">Google Maps</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>London Zoo</h3>
+          <p>
+            <a href="https://www.londonzoo.org/" target="_blank">Official site</a> ·
+<a href="https://www.tripadvisor.com/Attraction_Review-g186338-d187553-Reviews-London_Zoo-London_England.html" target="_blank">Tripadvisor</a> ·
+            <a href="https://maps.google.com/?q=London+Zoo" target="_blank">Google Maps</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESTAURANTS -->
+    <section>
+      <h2>Restaurants</h2>
+
+      <div class="filters">
+        <select id="areaFilter"><option value="">All areas</option></select>
+        <select id="cuisineFilter"><option value="">All cuisines</option></select>
+        <select id="priceFilter"><option value="">All prices</option></select>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Area</th><th>Name</th><th>Cuisine</th><th>Price</th><th>Rating</th><th>Links</th></tr>
+        </thead>
+        <tbody>
+<tr><td>Tower Hill / Tower Bridge</td><td>The Ivy Tower Bridge</td><td>British</td><td>££</td><td>4.3</td><td><a href="https://theivycollection.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=The+Ivy+Tower+Bridge" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=The+Ivy+Tower+Bridge" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Coppa Club</td><td>Mediterranean</td><td>££</td><td>4.1</td><td><a href="https://www.coppaclub.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Coppa+Club+Tower+Bridge" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Coppa+Club+Tower+Bridge" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Baluchi</td><td>Indian</td><td>££££</td><td>4.8</td><td><a href="https://www.baluchirestaurants.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Baluchi+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Baluchi+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>TwoRuba</td><td>Bar / Pub</td><td>££</td><td>4.8</td><td><a href="https://tworuba.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=TwoRuba+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=TwoRuba+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Piccolino</td><td>Italian</td><td>££</td><td>4.8</td><td><a href="https://individualrestaurants.com/piccolino/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Piccolino+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Piccolino+London" target="_blank">Maps</a></td></tr>
+
+<tr><td>Knightsbridge &amp; Belgravia</td><td>Dinner by Heston Blumenthal</td><td>Modern British</td><td>££££+</td><td>4.6</td><td><a href="https://www.dinnerbyheston.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Dinner+by+Heston+Blumenthal" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Dinner+by+Heston+Blumenthal" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Pétrus (Gordon Ramsay)</td><td>French</td><td>££££+</td><td>4.6</td><td><a href="https://www.gordonramsayrestaurants.com/petrus/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Petrus+Gordon+Ramsay+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Petrus+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>ALBA London</td><td>Italian</td><td>££££</td><td>4.7</td><td><a href="https://albalondon.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=ALBA+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=ALBA+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Patara</td><td>Thai</td><td>£££</td><td>4.8</td><td><a href="https://www.patararestaurants.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Patara+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Patara+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>The Mantl</td><td>Turkish</td><td>£££</td><td>4.7</td><td><a href="https://themantl.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=The+Mantl+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=The+Mantl+London" target="_blank">Maps</a></td></tr>
+
+<tr><td>Westminster</td><td>The Red Lion</td><td>Pub</td><td>££</td><td>4.5</td><td><a href="https://www.redlionparliamentstreet.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=The+Red+Lion+Westminster" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=The+Red+Lion+Westminster" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>St. Stephen’s Tavern</td><td>Pub</td><td>££</td><td>4.3</td><td><a href="https://ststephenstavern.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=St+Stephen%E2%80%99s+Tavern" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=St+Stephen%E2%80%99s+Tavern" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Gillray’s Steakhouse</td><td>Steakhouse</td><td>£££</td><td>4.5</td><td><a href="https://www.gillrays.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Gillray%E2%80%99s+Steakhouse" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Gillray%E2%80%99s+Steakhouse" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Library at County Hall</td><td>British</td><td>£££</td><td>4.7</td><td><a href="https://www.countyhallrestaurant.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Library+at+County+Hall" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Library+at+County+Hall+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Horse &amp; Guardsman</td><td>Pub</td><td>££</td><td>4.4</td><td><a href="https://www.horseandguardsman.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Horse+%26+Guardsman+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Horse+%26+Guardsman+London" target="_blank">Maps</a></td></tr>
+
+<tr><td>Covent Garden</td><td>Frog by Adam Handling</td><td>Modern British</td><td>££££+</td><td>4.6</td><td><a href="https://www.frogbyadamhandling.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Frog+by+Adam+Handling" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Frog+by+Adam+Handling" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Clos Maggiore</td><td>French</td><td>££££</td><td>4.6</td><td><a href="https://closmaggiore.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Clos+Maggiore" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Clos+Maggiore+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Blacklock</td><td>British</td><td>£££</td><td>4.7</td><td><a href="https://theblacklock.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Blacklock+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Blacklock+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Flat Iron</td><td>Steak</td><td>££</td><td>4.6</td><td><a href="https://flatironsteak.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Flat+Iron+London" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Flat+Iron+London" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Ukiyo Hand Roll Bar</td><td>Japanese</td><td>£££</td><td>4.8</td><td><a href="https://ukiyohandrollbar.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Ukiyo+Hand+Roll+Bar" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Ukiyo+Hand+Roll+Bar+London" target="_blank">Maps</a></td></tr>
+
+<tr><td>Camden</td><td>Mildreds</td><td>Vegan</td><td>££</td><td>4.7</td><td><a href="https://www.mildreds.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Mildreds+Camden" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Mildreds+Camden" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>LUMI</td><td>Café</td><td>£</td><td>4.8</td><td><a href="https://www.lumilondon.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=LUMI+Camden" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=LUMI+Camden" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>The Hawley Arms</td><td>Pub</td><td>££</td><td>4.5</td><td><a href="https://www.thehawleyarms.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=The+Hawley+Arms" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=The+Hawley+Arms+Camden" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Sheephaven Bay</td><td>Irish Pub</td><td>££</td><td>4.6</td><td><a href="https://www.sheephavenbay.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Sheephaven+Bay" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Sheephaven+Bay+Camden" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>World’s End</td><td>Pub</td><td>£</td><td>4.4</td><td><a href="https://www.worldsendcamden.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=World%E2%80%99s+End+Camden" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=World%E2%80%99s+End+Camden" target="_blank">Maps</a></td></tr>
+
+<tr><td>Soho</td><td>Dishoom</td><td>Indian</td><td>££</td><td>4.7</td><td><a href="https://www.dishoom.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Dishoom+Soho" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Dishoom+Soho" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Kiln</td><td>Thai / Open Fire</td><td>££</td><td>4.6</td><td><a href="https://www.kilnsoho.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Kiln+Soho" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Kiln+Soho" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Bao</td><td>Taiwanese</td><td>££</td><td>4.5</td><td><a href="https://baolondon.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Bao+Soho" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Bao+Soho" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>Barrafina</td><td>Spanish Tapas</td><td>£££</td><td>4.8</td><td><a href="https://www.barrafina.co.uk/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=Barrafina+Soho" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=Barrafina+Soho" target="_blank">Maps</a></td></tr>
+<tr><td></td><td>The French House</td><td>Pub</td><td>££</td><td>4.4</td><td><a href="https://www.frenchhousesoho.com/" target="_blank">Website</a> · <a href="https://www.tripadvisor.com/Search?q=The+French+House+Soho" target="_blank">Tripadvisor</a> · <a href="https://maps.google.com/?q=The+French+House+Soho" target="_blank">Maps</a></td></tr>
+</tbody>
+      </table>
+    </section>
+
+    <!-- (Restaurant table blijft exact zoals jij hem al had — volledig en correct) -->
+    <!-- Script hieronder regelt de filtering -->
+
+  </main>
+
+  <footer>
+    <p>Made with love — London awaits 💙</p>
+  </footer>
+
+  <script>
+    const rows = Array.from(document.querySelectorAll('tbody tr'));
+    const areaFilter = document.getElementById('areaFilter');
+    const cuisineFilter = document.getElementById('cuisineFilter');
+    const priceFilter = document.getElementById('priceFilter');
+
+    function uniqueValues(index) {
+      return [...new Set(rows.map(r => r.children[index].innerText).filter(v => v))];
+    }
+
+    uniqueValues(0).forEach(v => areaFilter.innerHTML += `<option value="${v}">${v}</option>`);
+    uniqueValues(2).forEach(v => cuisineFilter.innerHTML += `<option value="${v}">${v}</option>`);
+    uniqueValues(3).forEach(v => priceFilter.innerHTML += `<option value="${v}">${v}</option>`);
+
+    function applyFilters() {
+      rows.forEach(row => {
+        const show =
+          (!areaFilter.value || row.children[0].innerText === areaFilter.value) &&
+          (!cuisineFilter.value || row.children[2].innerText === cuisineFilter.value) &&
+          (!priceFilter.value || row.children[3].innerText === priceFilter.value);
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    areaFilter.onchange =
+    cuisineFilter.onchange =
+    priceFilter.onchange = applyFilters;
+  </script>
+</body>
+</html>
